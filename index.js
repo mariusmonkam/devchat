@@ -8,20 +8,20 @@ server.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'public/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 app.get('/javascript', (req, res) => {
-  res.sendFile(__dirname + 'public/javascript.html');
+  res.sendFile(__dirname + '/public/javascript.html');
 });
 app.get('/html', (req, res) => {
-  res.sendFile(__dirname + 'public/html.html');
+  res.sendFile(__dirname + '/public/html.html');
 });
 
 app.get('/css', (req, res) => {
-  res.sendFile(__dirname + 'public/css.html');
+  res.sendFile(__dirname + '/public/css.html');
 });
 app.get('/reactjs', (req, res) => {
-  res.sendFile(__dirname + 'public/reactjs.html');
+  res.sendFile(__dirname + '/public/reactjs.html');
 });
 app.get('/jobs', (req, res) => {
   res.sendFile(__dirname + '/public/jobs.html');
