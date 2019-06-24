@@ -1,11 +1,11 @@
 const app = require('express')();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-//const port = 3003;
+const PORT = process.env.PORT ||3003;
 
-//server.listen(port, () => {
-//   console.log(`Server is running on port ${port}`);
-//});
+server.listen(port, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
