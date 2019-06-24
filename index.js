@@ -1,7 +1,7 @@
 const app = require('express')();
 const server = require('https').Server(app);
 const io = require('socket.io')(server);
-const PORT = process.env.PORT ||3003;
+var PORT = process.env.PORT ||3003;
 
 server.listen(port, () => {
   console.log(`Server is running on port ${PORT}`);
