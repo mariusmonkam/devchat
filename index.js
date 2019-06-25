@@ -1,8 +1,8 @@
 const app = require('express')();
 const server = require('https').Server(app);
 const io = require('socket.io')(server);
-app.set('ip_address', process.env.IP || '0.0.0.0')
 
+const PORT = process.env.PORT ||3003;
 
 
 
@@ -43,4 +43,6 @@ tech.on('connection', (socket) => {
      tech.emit('message','user disconnected');
    })
 })
-
+server.listen(port, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
