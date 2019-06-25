@@ -1,11 +1,10 @@
 const app = require('express')();
 const server = require('https').Server(app);
 const io = require('socket.io')(server);
-var PORT = process.env.PORT ||3003;
+app.set('ip_address', process.env.IP || '0.0.0.0')
 
-server.listen(port, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+
+
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
