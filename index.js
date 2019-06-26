@@ -1,11 +1,12 @@
 const app = require('express')();
-const server = require('https').Server(app);
+const server = require('http').Server(app);
 const io = require('socket.io')(server);
-
-const PORT = process.env.PORT ||3003;
-
+const PORT = process.env.PORT ;
 
 
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
@@ -43,6 +44,4 @@ tech.on('connection', (socket) => {
      tech.emit('message','user disconnected');
    })
 })
-server.listen(port, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+
