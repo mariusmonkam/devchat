@@ -4,8 +4,8 @@ const io = require('socket.io')(server);
 const PORT = process.env.PORT ;
 
 
-server.listen(3000, () => {
-  console.log(`Server is running on port 3000`);
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
@@ -39,7 +39,7 @@ tech.on('connection', (socket) => {
      console.log(`message: ${data.msg}`);
      tech.in(data.room).emit('message',data.msg);
    });
-   socket.on('disconnect', ()=>{
+   socket.on(`disconnect`, ()=>{
      console.log('user disconnected');
      tech.emit('message','user disconnected');
    })
